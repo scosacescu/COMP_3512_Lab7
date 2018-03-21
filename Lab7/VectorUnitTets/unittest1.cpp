@@ -3,7 +3,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace VectorUnitTests
+namespace VectorUnitTets
 {		
 	TEST_CLASS(UnitTest1)
 	{
@@ -11,7 +11,7 @@ namespace VectorUnitTests
 		
 		TEST_METHOD(TestMethod1)
 		{
-			
+			// TODO: Your test code here
 		}
 
 	};

@@ -7,12 +7,10 @@
 // https://google.github.io/styleguide/cppguide.html#Nonmember,_Static_Member,_and_Global_Functions
 // would just a namsepace be a better choice?
 
-class VectorUtils {
+namespace vectorUtils {
 
-public:
-	VectorUtils() {}
 
-	int sum(const std::vector<int>& v) {
+	inline int sum(const std::vector<int>& v) {
 		int elementsum{ 0 };
 		for (auto& n : v) {
 			elementsum += n;
@@ -21,19 +19,38 @@ public:
 		return elementsum;
 	}
 
-	int max(const std::vector<int>& v) {
-		int max = v[0];
-
-		for (std::vector<int>::const_iterator it = v.begin() + 1; it != v.end(); ++it) {
-			if (*it > max) {
-				max = *it;
+	inline int max(const std::vector<int>& v) {
+		
+		if (!v.empty()) {
+			int max = v[0];
+			for (std::vector<int>::const_iterator it = v.begin() + 1; it != v.end(); ++it) {
+				if (*it > max) {
+					max = *it;
+				}
 			}
+			std::cout << "The largest element in your vector is: " << max << std::endl;
+			return max;
 		}
-		std::cout << "The largest element in your vector is: " << max << std::endl;
-		return max;
+		else {
+			//std::cout << "Cannot find the max of an empty vector" << std::endl;
+			//return 0;
+			throw std::invalid_argument("cannot find the max of an empty vector");
+		}
 	}
 
-	double average(const std::vector<int>& v) {
+	inline int min(const std::vector<int>& v) {
+		int min = v[0];
+
+		for (std::vector<int>::const_iterator it = v.begin() + 1; it != v.end(); ++it) {
+			if (*it < min) {
+				min = *it;
+			}
+		}
+		std::cout << "The smallest element in your vector is: " << min << std::endl;
+		return min;
+	}
+
+	inline double average(const std::vector<int>& v) {
 		double intermediateSum{ 0 };
 		double average{ 0.00 };
 		for (auto& n : v) {
@@ -44,4 +61,4 @@ public:
 		return average;
 	}
 
-};
+}
