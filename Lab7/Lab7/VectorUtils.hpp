@@ -2,10 +2,9 @@
 #include <vector>
 #include <iostream>
 
-// wasn't sure what to do with these functions since a class isn't
-// exactly needed, so i read about this:
+// All util methods simply extracted as globals into a namespace as per:
 // https://google.github.io/styleguide/cppguide.html#Nonmember,_Static_Member,_and_Global_Functions
-// would just a namsepace be a better choice?
+
 
 namespace vectorUtils {
 
