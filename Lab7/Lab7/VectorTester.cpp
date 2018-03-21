@@ -1,6 +1,3 @@
-
-#include <vector>
-#include <iostream>
 #include "VectorUtils.cpp"
 
 using namespace std;

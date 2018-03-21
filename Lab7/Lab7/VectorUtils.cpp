@@ -1,10 +1,6 @@
 #pragma once
 #include <vector>
-
 #include <iostream>
-
-using namespace std;
-
 
 // wasn't sure what to do with these functions since a class isn't
 // exactly needed, so i read about this:
@@ -21,14 +17,14 @@ public:
 		for (auto& n : v) {
 			elementsum += n;
 		}
-		cout << "the sum of your vector's elements is: " << elementsum << endl;
+		std::cout << "the sum of your vector's elements is: " << elementsum << std::endl;
 		return elementsum;
 	}
 
 	int max(const std::vector<int>& v) {
 		int max = v[0];
 
-		for (vector<int>::const_iterator it = v.begin() + 1; it != v.end(); ++it) {
+		for (std::vector<int>::const_iterator it = v.begin() + 1; it != v.end(); ++it) {
 			if (*it > max) {
 				max = *it;
 			}
@@ -44,7 +40,7 @@ public:
 			intermediateSum += n;
 		}
 		average = (intermediateSum / v.size());
-		cout << "The average value of your vector is: " << average << endl;
+		std::cout << "The average value of your vector is: " << average << std::endl;
 		return average;
 	}
 
