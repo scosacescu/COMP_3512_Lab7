@@ -11,7 +11,7 @@ namespace VectorUnitTests
 		
 		TEST_METHOD(TestEmpty)
 		{
-			// TODO: Your test code here
+			// 
 		}
 
 	};
