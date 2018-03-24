@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <ios>
+#include <iomanip>
 
 // All util methods simply extracted as globals into a namespace as per:
 // https://google.github.io/styleguide/cppguide.html#Nonmember,_Static_Member,_and_Global_Functions
@@ -18,6 +20,7 @@ namespace vectorUtils {
 			for (std::vector<int>::const_iterator it = v.begin() + 1; it != v.end(); ++it) {
 				elementsum += *it;
 			}
+			std::cout.precision(3);
 			std::cout << "The sum of your vector's elements is: " << elementsum << std::endl;
 			return elementsum;
 		} 
@@ -75,15 +78,14 @@ namespace vectorUtils {
 	//PRE: 
 	inline double average(const std::vector<int>& v) {
 		if (!v.empty()) {
-			double average{ 0.00 };			//comment 78-89, and umcomment 80 - 85 if
-			average = sum(v) / v.size();	// uou don't want to just call sum()
-			//double intermediateSum{ 0 };
+			double average{ 0.000 };			
+			double intermediateSum{ 0.000 };
 
-			//for (auto& n : v) {
-			//	intermediateSum += n;
-			//}
-			//average = (intermediateSum / v.size());
-			std::cout << "The average value of your vector is: " << average << std::endl;
+			for (auto& n : v) {
+				intermediateSum += n;
+			}
+			average = (intermediateSum / v.size());
+			std::cout << "The average value of your vector is: " << std::setprecision(3) <<std::fixed << average << std::endl;
 			return average;
 		}
 		else{
